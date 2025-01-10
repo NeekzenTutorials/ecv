@@ -1,0 +1,22 @@
+services:
+  astro:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000"
+    volumes:
+      - .:/app
+    env-file:
+      - .env
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.${NAME}.rule=Host(`${NAME}.nathanfourny.com`)"
+      - "traefik.http.routers.${NAME}.entrypoints=websecure"
+      - "traefik.http.routers.${NAME}.tls.certresolver=myresolver"
+    networks:
+      - traefik-network
+
+networks:
+  traefik-network:
+    external: true
