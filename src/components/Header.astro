@@ -1,0 +1,57 @@
+<div class="ecv-header-container">
+    <div class="ecv-header">
+        <div class="ecv-header-logo">
+            <a href="/">
+                <img src="/images/logo.svg" alt="Ecv logo" />
+            </a>
+        </div>
+        <div class="ecv-header-links">
+            <a href="/projects">Mes Projets</a>
+            <a href="/blog">Blog</a>
+            <a href="/contact">Contact</a>
+        </div>
+    </div>
+</div>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+.ecv-header-container {
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  padding: 0.5rem 1rem;
+  font-family: 'Inter', sans-serif;
+}
+
+.ecv-header {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo */
+.ecv-header-logo img {
+  height: 40px;
+  display: block;
+}
+
+.ecv-header-links {
+  display: flex;
+  gap: 1rem; 
+}
+
+.ecv-header-links a {
+  color: #000000;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.ecv-header-links a:hover {
+  color: #0070f3;
+  transform: translateY(-2px);
+  text-decoration: underline;
+}
+</style>
