@@ -5,9 +5,7 @@ services:
       dockerfile: Dockerfile
     ports:
       - "3000"
-    volumes:
-      - .:/app
-    env-file:
+    env_file:
       - .env
     labels:
       - "traefik.enable=true"
