@@ -1,0 +1,157 @@
+---
+// src/pages/Home.astro
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import LogoTemp from '../assets/logo_temp.png';
+---
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>ECV - Nathan Fourny</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <!-- Header -->
+  <Header />
+
+  <!-- Section Principale -->
+  <main class="home-main">
+    <div class="background-image"></div>
+    <div class="content-overlay">
+      <div class="intro-text">
+        <h1>Bienvenue sur mon Portfolio</h1>
+        <p>Je suis Nathan Fourny, développeur web passionné par la création de sites modernes et fonctionnels. Explorez mes projets et découvrez mon parcours.</p>
+      </div>
+      <div class="profile-photo">
+        <img src={LogoTemp.src} alt="Photo de Nathan Fourny" />
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <Footer />
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+    /* Styles Globaux */
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Inter', sans-serif;
+      background-color: #ffffff;
+    }
+
+    /* Section principale avec image de fond */
+    .home-main {
+      position: relative;
+      height: 100vh;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    /* Image de fond */
+    .background-image {
+      background-image: url('../assets/background.jpg'); /* Remplacez par le chemin de votre image */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      z-index: -1;
+    }
+
+    /* Contenu overlay */
+    .content-overlay {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1200px;
+      width: 90%;
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.8); /* Optionnel : fond semi-transparent */
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Encadré de texte */
+    .intro-text {
+      flex: 1;
+      color: #000000;
+    }
+
+    .intro-text h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .intro-text p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    /* Photo de profil */
+    .profile-photo {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .profile-photo img {
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .profile-photo img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 992px) {
+      .content-overlay {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .intro-text, .profile-photo {
+        flex: none;
+        width: 100%;
+      }
+
+      .profile-photo {
+        margin-top: 1.5rem;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .intro-text h1 {
+        font-size: 2rem;
+      }
+
+      .intro-text p {
+        font-size: 1rem;
+      }
+
+      .profile-photo img {
+        width: 200px;
+        height: 200px;
+      }
+    }
+  </style>
+</body>
+</html>
