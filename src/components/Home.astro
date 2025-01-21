@@ -36,13 +36,13 @@ import LogoTemp from '../assets/logo_temp.png';
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
 
-    /* Styles Globaux */
     body, html {
       margin: 0;
       padding: 0;
       height: 100%;
       font-family: 'Inter', sans-serif;
       background-color: #ffffff;
+      overflow-x: hidden;
     }
 
     .home-main {
@@ -65,6 +65,7 @@ import LogoTemp from '../assets/logo_temp.png';
       left: 0;
       height: 100%;
       width: 100%;
+      z-index: -1;
     }
 
     .content-overlay {
@@ -75,14 +76,18 @@ import LogoTemp from '../assets/logo_temp.png';
       max-width: 1200px;
       width: 90%;
       padding: 2rem;
-      background: rgba(255, 255, 255, 0.8);
+      background: rgba(255, 255, 255, 0.7);
       border-radius: 8px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(5px);
     }
 
     .intro-text {
       flex: 1;
       color: #000000;
+      padding: 1rem;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 8px;
     }
 
     .intro-text h1 {
@@ -100,6 +105,7 @@ import LogoTemp from '../assets/logo_temp.png';
       display: flex;
       justify-content: center;
       align-items: center;
+      padding: 1rem;
     }
 
     .profile-photo img {
@@ -115,7 +121,6 @@ import LogoTemp from '../assets/logo_temp.png';
       transform: scale(1.05);
     }
 
-    /* Responsive Design */
     @media (max-width: 992px) {
       .content-overlay {
         flex-direction: column;
