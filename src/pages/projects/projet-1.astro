@@ -1,0 +1,67 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+<Layout>
+  <section class="project-detail">
+    <h1>Projet 1</h1>
+    <img src="/images/project1.jpg" alt="Projet 1 Image" />
+    <p>Description détaillée du projet 1. Vous pouvez inclure les technologies utilisées, les défis rencontrés, les résultats obtenus, etc.</p>
+    <a href="https://github.com/votre-projet-1" target="_blank" rel="noopener">Voir le projet sur GitHub</a>
+  </section>
+</Layout>
+
+<style>
+  .project-detail {
+    padding: 4rem 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .project-detail h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #000;
+  }
+
+  .project-detail img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+  }
+
+  .project-detail p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 1.5rem;
+  }
+
+  .project-detail a {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: #0070f3;
+    color: #ffffff;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+  }
+
+  .project-detail a:hover {
+    background-color: #005bb5;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 576px) {
+    .project-detail h1 {
+      font-size: 2rem;
+    }
+
+    .project-detail p {
+      font-size: 1rem;
+    }
+  }
+</style>

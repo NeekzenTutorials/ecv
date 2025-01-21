@@ -1,0 +1,118 @@
+---
+const projects = [
+  {
+    title: 'Projet 1',
+    description: 'Description du projet 1.',
+    image: '/images/project1.jpg',
+    link: '/projects/projet-1'
+  },
+  {
+    title: 'Projet 2',
+    description: 'Description du projet 2.',
+    image: '/images/project2.jpg',
+    link: '/projects/projet-2'
+  },
+  {
+    title: 'Projet 3',
+    description: 'Description du projet 3.',
+    image: '/images/project3.jpg',
+    link: '/projects/projet-3'
+  },
+  // Ajoutez autant de projets que nécessaire
+];
+---
+<section class="projects-section">
+  <h2>Mes Projets</h2>
+  <div class="projects-grid">
+    {projects.map(project => (
+      <div class="project-card" key={project.title}>
+        <a href={project.link}>
+          <img src={project.image} alt={`Image de ${project.title}`} />
+          <div class="project-info">
+            <h3>{project.title}</h3>
+            <p>{project.description}</p>
+          </div>
+        </a>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  .projects-section {
+    padding: 4rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .projects-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #000;
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+
+  .project-card {
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  .project-card a {
+    color: inherit;
+    text-decoration: none;
+    display: block;
+    height: 100%;
+  }
+
+  .project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .project-info {
+    padding: 1rem;
+    text-align: left;
+  }
+
+  .project-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #000;
+  }
+
+  .project-info p {
+    font-size: 1rem;
+    color: #555;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 576px) {
+    .projects-section h2 {
+      font-size: 2rem;
+    }
+
+    .project-info h3 {
+      font-size: 1.3rem;
+    }
+
+    .project-info p {
+      font-size: 0.9rem;
+    }
+  }
+</style>
