@@ -1,6 +1,6 @@
 ---
-// src/pages/Home.astro
 import LogoTemp from '../assets/logo_temp.png';
+import TechCarousel from './TechCarousel.astro';
 ---
 
 <!DOCTYPE html>
@@ -18,13 +18,57 @@ import LogoTemp from '../assets/logo_temp.png';
     <div class="content-overlay">
       <div class="intro-text">
         <h1>Bienvenue sur mon Portfolio</h1>
-        <p>Je suis Nathan Fourny, développeur en informatique curieux, j'aime explorer les différents domaines de la programmation. Que ce soit dans le développement web, de jeux-vidéos, logiciels ou encore mobile, je m'investis pleinement dans les projets que j'entreprend et aime particulièrement approfondir les différentes notions que je peux découvrir. Ouvert d'esprit et rigoureux, cette soif de découverte et cette volonté d'apprendre se traduisent aux travers de mes différents projets que je vous invite à explorer.</p>
+        <p>
+          Je suis Nathan Fourny, développeur en informatique curieux, j'aime explorer les différents domaines de la programmation. Que ce soit dans le développement web, de jeux-vidéos, logiciels ou encore mobile, je m'investis pleinement dans les projets que j'entreprend et aime particulièrement approfondir les différentes notions que je peux découvrir. Ouvert d'esprit et rigoureux, cette soif de découverte et cette volonté d'apprendre se traduisent aux travers de mes différents projets que je vous invite à explorer.
+        </p>
       </div>
       <div class="profile-photo">
         <img src={LogoTemp.src} alt="Photo de Nathan Fourny" />
       </div>
     </div>
   </main>
+
+  <!-- Carrousel des technos -->
+  <TechCarousel />
+
+  <section class="below-carousel">
+    <!-- Onglet Projets (gauche) -->
+    <div class="projects-box">
+      <h2>Mes Projets</h2>
+      <p>
+        Voici un aperçu de mes projets les plus récents et significatifs. 
+        Découvrez comment j'ai mis en pratique mes compétences 
+        pour développer des applications, des sites et bien plus encore.
+      </p>
+      <!-- Bouton blanc avec flèche -->
+      <a href="/projets" class="project-button">
+        <span class="arrow">→</span>
+      </a>
+    </div>
+
+    <!-- Onglet Formulaire Contact (droite) -->
+    <div class="contact-box">
+      <h2>Contactez-moi</h2>
+      <form>
+        <div class="form-group">
+          <label for="name">Nom</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+
+        <div class="form-group">
+          <label for="subject">Objet</label>
+          <input type="text" id="subject" name="subject" required />
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+        </div>
+
+        <button type="submit" class="submit-button">Envoyer</button>
+      </form>
+    </div>
+  </section>
 
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
@@ -138,6 +182,121 @@ import LogoTemp from '../assets/logo_temp.png';
       .profile-photo img {
         width: 200px;
         height: 200px;
+      }
+    }
+
+    .below-carousel {
+      /* Sépare visuellement du carousel, prend la largeur de la page */
+      width: 90%;
+      max-width: 1200px;
+      margin: 3rem auto 5rem auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    /* Box gauche (Projets) en noir */
+    .projects-box {
+      flex: 1;
+      background-color: #000; /* fond noir */
+      color: #fff;           /* texte blanc */
+      padding: 2rem;
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .projects-box h2 {
+      margin-top: 0;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .projects-box p {
+      font-size: 1rem;
+      line-height: 1.5;
+      margin-bottom: 2rem;
+    }
+
+    /* Bouton blanc avec flèche au centre */
+    .project-button {
+      display: inline-block;
+      border: 2px solid #fff; 
+      color: #fff;
+      background: transparent;
+      padding: 0.8rem 1.2rem;
+      border-radius: 4px;
+      text-decoration: none; /* enlève le soulignement */
+      text-align: center;
+      font-size: 1.2rem;
+      transition: background 0.3s, color 0.3s;
+    }
+    .project-button:hover {
+      background: #fff;
+      color: #000;
+    }
+    .arrow {
+      display: inline-block;
+      font-weight: bold;
+    }
+
+    /* Box droite (Contact) */
+    .contact-box {
+      flex: 1;
+      background-color: #f0f0f0;
+      color: #333;
+      padding: 2rem;
+      border-radius: 8px;
+    }
+
+    .contact-box h2 {
+      margin-top: 0;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.5rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    .submit-button {
+      display: inline-block;
+      background-color: #000;
+      color: #fff;
+      padding: 0.8rem 1.2rem;
+      border: none;
+      border-radius: 4px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .submit-button:hover {
+      background-color: #333;
+    }
+
+    /* Responsive : en dessous de 768px, on empile verticalement */
+    @media (max-width: 768px) {
+      .below-carousel {
+        flex-direction: column;
+        gap: 2rem;
       }
     }
   </style>

@@ -1,0 +1,135 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+  <main class="legal-main">
+    <h1>Mentions Légales</h1>
+
+    <!-- Éditeur du site -->
+    <section class="legal-section">
+      <h2>Éditeur du site</h2>
+      <p>
+        <strong>Nom / Raison sociale :</strong> Nathan Fourny<br/>
+        <br/>
+        Le site <strong><a href="https://ecv.nathanfourny.com">ecv.nathanfourny.com</a></strong> est édité par Nathan Fourny.
+      </p>
+    </section>
+
+    <!-- Directeur de publication (facultatif, ou identique à l’éditeur) -->
+    <section class="legal-section">
+      <h2>Directeur de publication</h2>
+      <p>
+        <strong>Nom :</strong> Nathan Fourny<br/>
+        Le directeur de publication est responsable du contenu éditorial du site.
+      </p>
+    </section>
+
+    <!-- Hébergeur -->
+    <section class="legal-section">
+      <h2>Hébergeur</h2>
+      <p>
+        <strong>Nom :</strong> [Nom de l'hébergeur]<br/>
+        <strong>Adresse :</strong> [Adresse de l'hébergeur]<br/>
+        <strong>Téléphone :</strong> [Téléphone de l'hébergeur]<br/>
+        L’hébergement du site est réalisé par [Nom de l'hébergeur].
+      </p>
+    </section>
+
+    <!-- Propriété intellectuelle -->
+    <section class="legal-section">
+      <h2>Propriété Intellectuelle</h2>
+      <p>
+        Les éléments présents sur ce site (textes, images, logos, vidéos, 
+        graphismes, icônes, etc.) sont protégés par les dispositions relatives 
+        à la propriété intellectuelle et sont la propriété exclusive de 
+        <strong>Nathan Fourny</strong> ou de leurs propriétaires respectifs 
+        ayant autorisé leur diffusion. 
+      </p>
+      <p>
+        Toute reproduction, représentation, modification, publication, 
+        adaptation de tout ou partie de ces éléments, quel que soit le moyen 
+        ou le procédé utilisé, est interdite, sauf autorisation écrite préalable.
+      </p>
+    </section>
+
+    <!-- Responsabilité -->
+    <section class="legal-section">
+      <h2>Responsabilité</h2>
+      <p>
+        Le propriétaire du site s’engage à fournir des informations exactes et 
+        à jour. Toutefois, il ne saurait être tenu responsable des omissions, 
+        inexactitudes ou carences dans la mise à jour, qu’elles soient de son 
+        fait ou du fait des tiers partenaires qui fournissent ces informations. 
+      </p>
+      <p>
+        Les liens hypertextes présents sur le site peuvent renvoyer vers d’autres 
+        sites ou ressources. La responsabilité de l’éditeur ne saurait être 
+        engagée quant au contenu de ces sites tiers.
+      </p>
+    </section>
+
+    <!-- Données personnelles et cookies -->
+    <section class="legal-section">
+      <h2>Données personnelles</h2>
+      <p>
+        Le site peut être amené à vous demander certaines données personnelles, nottamment lors de l'envoi d'un formulaire de contact. Ces données sont utilisés uniquement dans le cadre de la fonctionnalité demandée et ne sont en aucun cas stockées ou transmises à des sites tiers.
+      </p>
+    </section>
+
+    <!-- Crédits -->
+    <section class="legal-section">
+      <h2>Crédits</h2>
+      <p>
+        <strong>Création et design :</strong> Nathan Fourny<br/>
+        <strong>Images & icônes :</strong> [Sources, banques d’images, etc.]
+      </p>
+    </section>
+
+    <!-- Loi applicable -->
+    <section class="legal-section">
+      <h2>Loi Applicable</h2>
+      <p>
+        Les présentes mentions légales sont soumises au droit français. 
+        En cas de litige et à défaut de résolution amiable, 
+        les tribunaux français seront seuls compétents.
+      </p>
+    </section>
+  </main>
+
+  <style>
+    .legal-main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+      color: #333; /* Couleur de texte plus douce pour un design épuré */
+      line-height: 1.6;
+    }
+    
+    .legal-main h1 {
+      margin-top: 0;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .legal-section {
+      margin-bottom: 2rem; /* Espace entre les sections */
+    }
+
+    .legal-section h2 {
+      font-size: 1.4rem;
+      margin-bottom: 0.8rem;
+      color: #000; /* Titre un peu plus foncé */
+    }
+
+    .legal-section p {
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+
+    /* Ex : Style des strong plus visible pour souligner certains mots-clés */
+    strong {
+      color: #000;
+    }
+  </style>
+</Layout>
