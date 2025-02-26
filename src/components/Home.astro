@@ -28,7 +28,6 @@ import TechCarousel from './TechCarousel.astro';
     </div>
   </main>
 
-  <!-- Carrousel des technos -->
   <TechCarousel />
 
   <section class="below-carousel">
@@ -40,7 +39,6 @@ import TechCarousel from './TechCarousel.astro';
         Découvrez comment j'ai mis en pratique mes compétences 
         pour développer des applications, des sites et bien plus encore.
       </p>
-      <!-- Bouton blanc avec flèche -->
       <a href="/projets" class="project-button">
         <span class="arrow">→</span>
       </a>
@@ -186,7 +184,6 @@ import TechCarousel from './TechCarousel.astro';
     }
 
     .below-carousel {
-      /* Sépare visuellement du carousel, prend la largeur de la page */
       width: 90%;
       max-width: 1200px;
       margin: 3rem auto 5rem auto;
@@ -195,11 +192,10 @@ import TechCarousel from './TechCarousel.astro';
       gap: 2rem;
     }
 
-    /* Box gauche (Projets) en noir */
     .projects-box {
       flex: 1;
-      background-color: #000; /* fond noir */
-      color: #fff;           /* texte blanc */
+      background-color: #000;
+      color: #fff;
       padding: 2rem;
       border-radius: 8px;
       display: flex;
@@ -219,7 +215,6 @@ import TechCarousel from './TechCarousel.astro';
       margin-bottom: 2rem;
     }
 
-    /* Bouton blanc avec flèche au centre */
     .project-button {
       display: inline-block;
       border: 2px solid #fff; 
@@ -227,7 +222,7 @@ import TechCarousel from './TechCarousel.astro';
       background: transparent;
       padding: 0.8rem 1.2rem;
       border-radius: 4px;
-      text-decoration: none; /* enlève le soulignement */
+      text-decoration: none;
       text-align: center;
       font-size: 1.2rem;
       transition: background 0.3s, color 0.3s;
@@ -241,7 +236,6 @@ import TechCarousel from './TechCarousel.astro';
       font-weight: bold;
     }
 
-    /* Box droite (Contact) */
     .contact-box {
       flex: 1;
       background-color: #f0f0f0;
@@ -292,7 +286,6 @@ import TechCarousel from './TechCarousel.astro';
       background-color: #333;
     }
 
-    /* Responsive : en dessous de 768px, on empile verticalement */
     @media (max-width: 768px) {
       .below-carousel {
         flex-direction: column;

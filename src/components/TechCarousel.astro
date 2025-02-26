@@ -14,7 +14,6 @@ import FlutterIcon from '../assets/flutter-icon.png';
 import MongoIcon from '../assets/mongodb-icon.svg';
 import PgSQLIcon from '../assets/pgsql-icon.png';
 
-/* Tableau des technologies */
 const techItems = [
   { name: 'Python', icon: PythonIcon.src },
   { name: 'Java', icon: JavaIcon.src },
@@ -33,9 +32,7 @@ const techItems = [
 ];
 ---
 
-<!-- Conteneur principal (100% largeur) -->
 <div class="carousel-container">
-  <!-- Bouton flèche gauche -->
   <button class="arrow arrow-left" id="arrow-left">&#10094;</button>
   
   <div class="carousel" id="carousel">
@@ -47,23 +44,19 @@ const techItems = [
     ))}
   </div>
 
-  <!-- Bouton flèche droite -->
   <button class="arrow arrow-right" id="arrow-right">&#10095;</button>
 </div>
 
-<!-- Script client pour faire défiler au clic sur les flèches -->
 <script is:inline>
   document.addEventListener("DOMContentLoaded", () => {
     const carousel = document.getElementById('carousel');
     const arrowLeft = document.getElementById('arrow-left');
     const arrowRight = document.getElementById('arrow-right');
 
-    // Au clic sur la flèche gauche
     arrowLeft.addEventListener('click', () => {
       carousel.scrollBy({ left: -200, behavior: 'smooth' });
     });
 
-    // Au clic sur la flèche droite
     arrowRight.addEventListener('click', () => {
       carousel.scrollBy({ left: 200, behavior: 'smooth' });
     });
@@ -71,14 +64,12 @@ const techItems = [
 </script>
 
 <style>
-  /* Conteneur global, occupe toute la largeur, position:relative pour placer les flèches */
   .carousel-container {
     width: 100%;
     margin: 2rem auto;
     position: relative;
   }
 
-  /* Flèches positionnées absolument aux extrémités */
   .arrow {
     position: absolute;
     top: 50%;
@@ -104,33 +95,31 @@ const techItems = [
     right: 0.5rem;
   }
 
-  /* Le carrousel défile horizontalement, on masque la barre de scroll */
   .carousel {
     display: flex;
-    gap: 4rem; /* Espace horizontal entre les items */
+    gap: 4rem;
     padding: 4rem;
     overflow-x: hidden; 
     scroll-behavior: smooth; 
 
-    -webkit-overflow-scrolling: touch; /* Meilleure inertie sur mobile */
+    -webkit-overflow-scrolling: touch;
   }
   .carousel::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, Opera */
+    display: none;
   }
   .carousel {
-    scrollbar-width: none; /* Firefox */
+    scrollbar-width: none;
   }
 
   .carousel-item {
     flex: 0 0 auto;
     width: 100px;
     text-align: center;
-    position: relative; /* Important: nécessaire pour la position absolue du texte */
+    position: relative;
     cursor: pointer;
     transition: transform 0.3s;
   }
 
-  /* Image ronde avec un léger zoom au survol */
   .carousel-item img {
     width: 80px;
     height: 80px;
@@ -143,16 +132,13 @@ const techItems = [
     transform: scale(1.05);
   }
 
-  /* Le nom de la techno en position absolue pour éviter de pousser la mise en page */
   .tech-name {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    /* On le place en dessous de l’icône (100% = la hauteur de .carousel-item) */
     top: 100%;
     margin-top: 0.5rem;
 
-    /* Apparence du texte */
     background-color: #333;
     color: #fff;
     padding: 0.3rem 0.6rem;
@@ -160,14 +146,12 @@ const techItems = [
     font-weight: bold;
     font-size: 0.8rem;
 
-    /* Par défaut, invisible */
     opacity: 0;
     pointer-events: none; 
     transition: opacity 0.2s;
-    white-space: nowrap; /* évite le retour à la ligne si le nom est long */
+    white-space: nowrap;
   }
 
-  /* Au survol, on révèle le nom */
   .carousel-item:hover .tech-name {
     opacity: 1;
   }
