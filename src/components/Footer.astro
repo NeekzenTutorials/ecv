@@ -1,57 +1,81 @@
 <div class="ecv-footer-container">
-    <div class="ecv-footer">
+  <div class="ecv-footer">
       <div class="ecv-footer-left">
-        <p>&copy; 2025 ECV Nathan Fourny. Tous droits réservés.</p>
+          <p>&copy; 2025 ECV Nathan Fourny. Tous droits réservés.</p>
       </div>
       <div class="ecv-footer-right">
-        <a href="/MentionsLegales">Mentions légales</a>
-        <a href="/#contact">Contact</a>
+          <div class="ecv-footer-social">
+              <a href="https://www.linkedin.com/in/nathan-fourny/" target="_blank">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn">
+              </a>
+              <a href="https://github.com/NeekzenTutorials" target="_blank">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
+              </a>
+          </div>
+          <a href="/MentionsLegales">Mentions légales</a>
+          <a href="/#contact">Contact</a>
       </div>
-    </div>
   </div>
-  
-  <style>
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
-  
-  .ecv-footer-container {
-    background-color: #ffffff;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.05);
-    font-family: 'Inter', sans-serif;
-    padding: 1rem;
-  }
-  
-  .ecv-footer {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .ecv-footer-left p {
-    margin: 0;
-    color: #000000;
-    font-size: 0.9rem;
-    line-height: 1.4;
-  }
-  
-  .ecv-footer-right {
-    display: flex;
-    gap: 1rem;
-  }
-  
-  .ecv-footer-right a {
-    color: #000000;
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.2s ease, transform 0.2s ease;
-    font-size: 0.9rem;
-  }
-  
-  .ecv-footer-right a:hover {
-    color: #0070f3;
-    text-decoration: underline;
-    transform: translateY(-2px);
-  }
-  </style>
-  
+</div>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+.ecv-footer-container {
+  background-color: #ffffff;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.05);
+  font-family: 'Inter', sans-serif;
+  padding: 1rem;
+}
+
+.ecv-footer {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ecv-footer-left p {
+  margin: 0;
+  color: #000000;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.ecv-footer-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Style pour les icônes sociales */
+.ecv-footer-social {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.ecv-footer-social a img {
+  width: 42px;
+  height: 42px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.ecv-footer-social a:hover img {
+  transform: scale(1.2);
+}
+
+.ecv-footer-right a {
+  color: #000000;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease, transform 0.2s ease;
+  font-size: 0.9rem;
+}
+
+.ecv-footer-right a:hover {
+  color: #0070f3;
+  text-decoration: underline;
+  transform: translateY(-2px);
+}
+</style>
