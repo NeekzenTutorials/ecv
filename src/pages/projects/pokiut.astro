@@ -1,37 +1,35 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import MarkdownPDF from '../../assets/markdown_pdf.png';
-import PannelAdmin from '../../assets/pannel_admin_django.png';
-import ArbreEnigme from '../../assets/arbre_enigme.png';
+import UnityScene from '../../assets/unity_scene.png';
+import UnityCombat from '../../assets/unity_combat.png';
+import BlenderIUT from '../../assets/blender_iut.png';
 ---
 <Layout>
   <section class="project-header">
     <div class="background-overlay">
-      <h1>Kameleon</h1>
-      <p>Kameleon est un site web dynamique de jeux cryptographique réalisés dans le cadre d'un projet en BUT informatique 3ème année.<br /><br />J'étais dans un groupe de 5 et en tant que développeur full-stack et responsable back-end du projet, j'ai eu à mettre en place l'intégralité du back-end Django du site web et à implémenter les intéractions entre le back-end et le front-end.<br /><br />Vous retrouverez sur cette page les démarches que nous avons effectués afin de mener ce projet à terme.</p>
-      <a href="https://kameleon.jrcan.dev" target="_blank" rel="noopener" class="project-link modern-button">Voir le projet</a>
+      <h1>PokIUT</h1>
+      <p>PokIUT est un projet réalisé dans l'objectif de produire un mini pokémon-like en moins de 2 semaines. Le jeu se déroule dans un IUT informatique, où des étudiants ont la possibilité de capturer et combattre des langages de programmation, les pokIUTs.<br /><br />Le jeu a été réalisé sur le moteur de jeu Unity3D et développé dans le langage natif de Unity, le C#.</p>
+      <a href="https://github.com/Csquare-Interactive/PokIUT/releases/tag/alpha" target="_blank" rel="noopener" class="project-link modern-button">Voir le projet</a>
       <div class="tags">
-        <span class="tag">Python</span>
-        <span class="tag">Django</span>
-        <span class="tag">Vue.js</span>
-        <span class="tag">Node.js</span>
-        <span class="tag">Docker</span>
+        <span class="tag">C#</span>
+        <span class="tag">Blender</span>
+        <span class="tag">Unity3D</span>
       </div>
     </div>
     <button class="back-button" onclick="history.back()">← Retour</button>
   </section>
 
   <section class="project-content">
-    {[MarkdownPDF.src, PannelAdmin.src, ArbreEnigme.src].map((image, index) => (
+    {[UnityScene.src, UnityCombat.src, BlenderIUT.src].map((image, index) => (
       <div class={`content-block ${index % 2 === 0 ? 'image-left' : ''}`} key={index}>
         <img src={image} alt={`Étape ${index + 1}`} />
         <div class="text-box">
-          <h2>{['Gestion de projet', 'Back-end', 'Arbre d\'énigmes'][index]}</h2>
+          <h2>{['Environnement Unity', 'Combat', 'Level Design'][index]}</h2>
             <p set:html={`${
             [
-              "Au travers de ce projet, nous étions en simulation d'un environnement professionnel. Nous avons donc eu à communiquer avec un client et fournir des comptes rendus au fur et à mesure de l'avancé du projet.<br /><br />Pour faciliter cela, j'ai mis au points un algorithme de Markdown qui permet de générer des pdf à partir de fichiers Markdown et de les stylisés rapidement en quelques commandes.<br /> Cette initiative nous a permis de gagner du temps et de fournir des documents de qualité au client chaque semaine.",
-              "En tant que développeur Full-stack durant le projet et surtout responsable du back-end, j'ai eu à mettre en place de A à Z le back-end de notre site en utilisant le framework Django.<br /><br />L'utilisation de Django c'est avéré être un choix judicieux pour ce projet car cela nous a permis de gagner du temps sur le développement du site et de nous concentrer sur l'optimisation de celui-ci.<br /> Ce temps gagné nous as permis nottament de mettre en place un pannel administrateur afin de faciliter les entrées et sorties en base de données et nous avons également pu ajouter un système de sauvegarde de CV sur notre site, ce qui a été très apprécié par le client.",
-              "Enfin, ma contribution de la partie front-end du site aura été l'implémentation d'un système d'arbre d'énigmes qui permet aux utilisateurs de naviguer entre les différentes énigmes du site de manière fluide et intuitive.<br /><br />Pour ce faire j'ai utilisé les Canva avec Vue.js 3 et j'ai fais en sorte que les énigmes soient générées à partir des données reçu en base de données. Ainsi, non seulement l'arbre se génère de manière fluide avec un style intuitif mais en plus le procédé fait qu'il est impossible pour les joueurs de tricher étant donné que les vérifications se font côté serveur."
+              "Afin de mener à bien ce projet de 2 semaines, il fallait choisir un environnement de développement approprié. Ayant déjà des connaissances et de l'expérience sur le moteur Unity3D, c'est tout naturellement vers lui que nous nous sommes tournés.<br /><br />L'environnement Unity, accompagné de son langage natif le C#, nous a permis d'atteindre dans les temps un jeu fonctionnel et jouable avec un système de combat basique.",
+              "Comme tout pokémon-like qui se respecte, le combat est un élément central du jeu. Il reprend les concepts de combat en tour par tour dans une interface 2D des jeux pokémons classiques.<br /><br />Dans la version finale du jeu, chaque pokIUT a des capacités, chaque capacité à un nombre d'utilisation limité ainsi qu'une puissance et une précision qui lui sont propres. Il est également possible d'infliger des états à son adversaire comme paralysé ou indenté.",
+              "Nous nous sommes donnés comme défi de réaliser chaque ressource du jeu nous-mêmes, que ce soit le code mais aussi les ressources artistiques. Ainsi, les différents sprites utilisés ont été dessinés et animés sur Procreate et l'IUT a été modélisé sur Blender.<br /><br />Pour rendre le jeu fluide visuellement, nous avons également ajouté des fonctionnalités à la caméra en jeu, notamment un déplacement fluide et dynamique grâce au plugin Unity Cinemachine mais également en masquant des parties du décor avec des Shaders faits à la main pour venir flouter ce qui se trouve entre le joueur et la caméra."
             ][index]
             }`}></p>
         </div>
@@ -44,15 +42,15 @@ import ArbreEnigme from '../../assets/arbre_enigme.png';
     <div class="summary-content">
       <div class="summary">
         <h3>Conclusion :</h3>
-        <p>Ce projet aura été un défi de taille principalement pour réussir à rendre des énigmes cryptographique intuitive et ludique, ce qu'on a essayé de réalisé à travers un arbre de "compétence" similaire à ce qu'on peut retrouver dans les jeux-vidéos.</p>
+        <p>Ce projet aura été l'un des plus enrichissants que j'ai pu faire. Arrivé au terme des 2 semaines de travail nous avons su produire une démo fonctionnelle avec tous les défis que nous nous étions donnés.</p>
       </div>
       <div class="keywords">
         <h3>Mots Clés :</h3>
-        <p>Sécurisation, Efficacité, Expérience Utilisateur, Intuitif, Ludique</p>
+        <p>Environnement 3D, Interface 2D, UX-UI, Gameplay de combat, Stratégie, Boucle de jeu, Modélisation</p>
       </div>
       <div class="personal-review">
         <h3>Avis Personnel :</h3>
-        <p>Personnellement, Je n'avais jamais utilisés Django avant ce projet et mon ressenti avec la technologie a été satisfaisante, cette dernière est rapide à prendre en main et est particulièrement efficace et modulaire.</p>
+        <p>Pour ma part, ce projet m'aura une nouvelle fois permis d'exploiter toute la puissance du moteur de jeu Unity3D. J'ai pour la première fois écrit des Shaders afin d'ajouter des fonctionnalités visuelles au jeu. Le travail fourni au terme de ces 2 semaines aura été concluant et j'ai particulièrement apprécié travailler sur les fonctionnalités des capacités des pokIUTs avec la mise en place des changements d'états, etc...</p>
       </div>
     </div>
   </section>
@@ -60,8 +58,8 @@ import ArbreEnigme from '../../assets/arbre_enigme.png';
   <section class="project-resources">
     <h2>Ressources du Projet</h2>
     <div class="resources-buttons">
-      <a href="https://github.com/NeekzenTutorials/Kameleon-Back" target="_blank" rel="noopener" class="resource-button">GitHub du back</a>
-      <a href="https://kameleon.jrcan.dev" class="resource-button">Lien du site</a>
+      <a href="https://github.com/Csquare-Interactive/PokIUT/tree/main" target="_blank" rel="noopener" class="resource-button">GitHub du back</a>
+      <a href="https://github.com/Csquare-Interactive/PokIUT/releases/tag/alpha" class="resource-button">Lien du jeu</a>
     </div>
   </section>
 </Layout>
@@ -76,7 +74,7 @@ import ArbreEnigme from '../../assets/arbre_enigme.png';
     position: relative;
     width: 100%;
     height: 100vh;
-    background: url('../../assets/kameleon_background.png') no-repeat center center/cover;
+    background: url('../../assets/unity_scene.png') no-repeat center center/cover;
     display: flex;
     align-items: center;
     justify-content: center;
