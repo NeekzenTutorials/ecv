@@ -1,0 +1,229 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import TraeffikLogo from '../../assets/traeffik_logo.png';
+import DockerWordpress from '../../assets/docker_wordpress.png';
+import DashboardWordpress from '../../assets/dashboard_wordpress.png';
+---
+<Layout>
+  <section class="project-header">
+    <div class="background-overlay">
+      <h1>Hébergement Wordpress Multisite</h1>
+      <p>Dans le cadre de mon stage de 2ème année au sein de l'association JRCANDEV, j'ai eu à mettre en place de A à Z un hébergement de wordpress multisite afin de permettre à des étudiants de créer, déposer et éditer leurs eCV sur les serveurs de l'associations.</p>
+      <a href="https://ecv.jrcan.dev" target="_blank" rel="noopener" class="project-link modern-button">Voir le projet</a>
+      <div class="tags">
+        <span class="tag">Docker</span>
+        <span class="tag">Bash</span>
+        <span class="tag">Wordpress</span>
+      </div>
+    </div>
+    <button class="back-button" onclick="history.back()">← Retour</button>
+  </section>
+
+  <section class="project-content">
+    {[TraeffikLogo.src, DockerWordpress.src, DashboardWordpress.src].map((image, index) => (
+      <div class={`content-block ${index % 2 === 0 ? 'image-left' : ''}`} key={index}>
+        <img src={image} alt={`Étape ${index + 1}`} />
+        <div class="text-box">
+          <h2>{['VPS', 'Docker', 'Polishing'][index]}</h2>
+            <p set:html={`${
+            [
+              "La totalité des services que l'association mettaient à disposition des étudiants étaient hébergés sur un VPS Contabo. Afin de mettre en place mon service correctement j'ai donc tout d'abord eu à comprendre comment le VPS était structuré afin de ne pas interférer avec les autres services déjà en place.<br /><br /> J'ai donc eu à explorer les différents services et comprendre le fonctionnement de Traeffik qui était utilisé pour la gestion des noms de domaines et des certificats SSL.",
+              "Docker étant utilisé afin de fournir les services étudiants, il a fallut que je mette en place un docker permettant de configurer un wordpress multisite ce qui n'a pas été une tâche aisée.<br /><br /> Il a nottament fallut mettre en place plusieurs script bash afin de s'assurer que les services démarraient correctement et que toutes les dépendances s'installaient.<br /><br />Après des soucis rencontrés lors d'un redémarrage qui a supprimé les données du wordpress, j'ai également mis en place un système de sauvegarde des volumes du docker afin de ne plus perdre les données des étudiants.",
+              "La dernière étape a été le 'polishing' du service, c'est-à-dire rendre le service plus optimisé, finir les dernières fonctionnalités, écrire la documentation, etc...<br /><br /> C'est donc dans ce contexte que j'ai tout d'abord mis en place un système de création automatique d'utilisateur et de site avec un script Python. J'ai également mis en place un SMTP afin d'envoyer des mails aux étudiants pour qu'il puisse accéder facilement à leurs pages et modifier leurs identifiants. Enfin, J'ai documenté les étapes de créations des utilisateurs et des sites sur le github du projet."
+            ][index]
+            }`}></p>
+        </div>
+      </div>
+    ))}
+  </section>
+
+  <section class="project-final modern-box">
+    <h2>Résumé du Projet</h2>
+    <div class="summary-content">
+      <div class="summary">
+        <h3>Conclusion :</h3>
+        <p>Au terme de ces 3 mois de projets je suis finalement parvenu à mettre en place le service et à l'automatiser afin de faciliter l'intégration d'étudiants dans le service. Aujourd'hui, en tant que membre du CA de JRCANDEV je continue de maintenir et mettre à jour le service et ce dernier est utilisé par de nombreux étudiants.</p>
+      </div>
+      <div class="keywords">
+        <h3>Mots Clés :</h3>
+        <p>Devops, Automatisation, VPS, Configuration</p>
+      </div>
+      <div class="personal-review">
+        <h3>Avis Personnel :</h3>
+        <p>Avoir eu l'opportunité et la chance de mettre en place et diriger de A à Z l'intégration d'un service aura été une expérience très enrichissante, que ce soit sur le plan technique ou sur le plan gestion de projet. C'est également au travers de ce projet que j'ai pu perfectionner mes compétences Docker et de DevOps. Le ECV ci-présent est hébergé depuis un VPS et fonctionne lui aussi grâce à Docker.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="project-resources">
+    <h2>Ressources du Projet</h2>
+    <div class="resources-buttons">
+      <a href="https://github.com/NeekzenTutorials/Kameleon-Back" target="_blank" rel="noopener" class="resource-button">GitHub du back</a>
+      <a href="https://kameleon.jrcan.dev" class="resource-button">Lien du site</a>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .project-header {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url('../../assets/wordpress_background.png') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+  }
+
+  .background-overlay {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 70%;
+  }
+
+  .tags {
+    margin-top: 1rem;
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+  }
+
+  .tag {
+    padding: 0.5rem 1rem;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    background: #007BFF;
+    color: white;
+  }
+
+  .modern-button {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #0e7916;
+    color: white;
+    border-radius: 0;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+  }
+
+  .modern-button:hover {
+    background-color: #1bad28;
+  }
+
+  .back-button {
+    position: fixed;
+    top: 80px;
+    left: 20px;
+    padding: 0.5rem 1rem;
+    background: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .project-content {
+    max-width: 1000px;
+    margin: 4rem auto;
+    padding: 0 1rem;
+  }
+
+  .content-block {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 4rem;
+  }
+
+  .content-block.image-left {
+    flex-direction: row-reverse;
+  }
+
+  .text-box {
+    color: white;
+    background: #252525;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    flex: 1;
+  }
+
+  .content-block img {
+    width: 50%;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .project-final.modern-box {
+    background: #f8f8f8;
+    padding: 3rem 2rem;
+    text-align: center;
+    border-radius: 10px;
+    margin: 0 auto;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .summary-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .summary-content h3 {
+    margin-bottom: 0.5rem;
+  }
+
+  .project-resources {
+    background: #f8f8f8;
+    padding: 2rem;
+    text-align: center;
+    border-radius: 10px;
+    max-width: 800px;
+    margin: 2rem auto;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .resources-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .resource-button {
+    padding: 0.75rem 1.5rem;
+    background-color: #007BFF;
+    color: white;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+  }
+
+  .resource-button:hover {
+    background-color: #0056b3;
+  }
+
+  @media (max-width: 768px) {
+    .content-block {
+      flex-direction: column;
+    }
+    .content-block.image-left {
+      flex-direction: column;
+    }
+    .content-block img {
+      width: 100%;
+    }
+  }
+</style>

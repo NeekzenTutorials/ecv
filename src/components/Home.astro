@@ -1,5 +1,6 @@
 ---
 import LogoTemp from '../assets/logo_temp.png';
+import LogoIdentite from '../assets/identite.jpg';
 import TechCarousel from './TechCarousel.astro';
 ---
 
@@ -19,11 +20,11 @@ import TechCarousel from './TechCarousel.astro';
       <div class="intro-text">
         <h1>Bienvenue sur mon Portfolio</h1>
         <p>
-          Je suis Nathan Fourny, développeur en informatique curieux, j'aime explorer les différents domaines de la programmation. Que ce soit dans le développement web, de jeux-vidéos, logiciels ou encore mobile, je m'investis pleinement dans les projets que j'entreprend et aime particulièrement approfondir les différentes notions que je peux découvrir. Ouvert d'esprit et rigoureux, cette soif de découverte et cette volonté d'apprendre se traduisent aux travers de mes différents projets que je vous invite à explorer.
+          <br />Je suis Nathan Fourny, développeur en informatique curieux, j'aime explorer les différents domaines de la programmation. Que ce soit dans le développement web, de jeux-vidéos, logiciels ou encore mobile, je m'investis pleinement dans les projets que j'entreprend et aime particulièrement approfondir les différentes notions que je peux découvrir.<br /> Ouvert d'esprit et rigoureux, cette soif de découverte et cette volonté d'apprendre se traduisent aux travers de mes différents projets que je vous invite à explorer.
         </p>
       </div>
       <div class="profile-photo">
-        <img src={LogoTemp.src} alt="Photo de Nathan Fourny" />
+        <img src={LogoIdentite.src} alt="Photo de Nathan Fourny" />
       </div>
     </div>
   </main>
@@ -39,7 +40,7 @@ import TechCarousel from './TechCarousel.astro';
         Découvrez comment j'ai mis en pratique mes compétences 
         pour développer des applications, des sites et bien plus encore.
       </p>
-      <a href="/projets" class="project-button">
+      <a href="/projects" class="project-button">
         <span class="arrow">→</span>
       </a>
     </div>
@@ -114,9 +115,9 @@ import TechCarousel from './TechCarousel.astro';
 
     .intro-text {
       flex: 1;
-      color: #000000;
+      color: #ffffff;
       padding: 1rem;
-      background: rgba(255, 255, 255, 0.5);
+      background: rgba(0, 0, 0, 0.8);
       border-radius: 8px;
       height: 100%;
     }

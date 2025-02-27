@@ -1,0 +1,231 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import MarkdownPDF from '../../assets/markdown_pdf.png';
+import PannelAdmin from '../../assets/pannel_admin_django.png';
+import ArbreEnigme from '../../assets/arbre_enigme.png';
+---
+<Layout>
+  <section class="project-header">
+    <div class="background-overlay">
+      <h1>Kameleon</h1>
+      <p>Kameleon est un site web dynamique de jeux cryptographique réalisés dans le cadre d'un projet en BUT informatique 3ème année.<br /><br />J'étais dans un groupe de 5 et en tant que développeur full-stack et responsable back-end du projet, j'ai eu à mettre en place l'intégralité du back-end Django du site web et à implémenter les intéractions entre le back-end et le front-end.<br /><br />Vous retrouverez sur cette page les démarches que nous avons effectués afin de mener ce projet à terme.</p>
+      <a href="https://kameleon.jrcan.dev" target="_blank" rel="noopener" class="project-link modern-button">Voir le projet</a>
+      <div class="tags">
+        <span class="tag">Python</span>
+        <span class="tag">Django</span>
+        <span class="tag">Vue.js</span>
+        <span class="tag">Node.js</span>
+        <span class="tag">Docker</span>
+      </div>
+    </div>
+    <button class="back-button" onclick="history.back()">← Retour</button>
+  </section>
+
+  <section class="project-content">
+    {[MarkdownPDF.src, PannelAdmin.src, ArbreEnigme.src].map((image, index) => (
+      <div class={`content-block ${index % 2 === 0 ? 'image-left' : ''}`} key={index}>
+        <img src={image} alt={`Étape ${index + 1}`} />
+        <div class="text-box">
+          <h2>{['Gestion de projet', 'Back-end', 'Arbre d\'énigmes'][index]}</h2>
+            <p set:html={`${
+            [
+              "Au travers de ce projet, nous étions en simulation d'un environnement professionnel. Nous avons donc eu à communiquer avec un client et fournir des comptes rendus au fur et à mesure de l'avancé du projet.<br /><br />Pour faciliter cela, j'ai mis au points un algorithme de Markdown qui permet de générer des pdf à partir de fichiers Markdown et de les stylisés rapidement en quelques commandes.<br /> Cette initiative nous a permis de gagner du temps et de fournir des documents de qualité au client chaque semaine.",
+              "En tant que développeur Full-stack durant le projet et surtout responsable du back-end, j'ai eu à mettre en place de A à Z le back-end de notre site en utilisant le framework Django.<br /><br />L'utilisation de Django c'est avéré être un choix judicieux pour ce projet car cela nous a permis de gagner du temps sur le développement du site et de nous concentrer sur l'optimisation de celui-ci.<br /> Ce temps gagné nous as permis nottament de mettre en place un pannel administrateur afin de faciliter les entrées et sorties en base de données et nous avons également pu ajouter un système de sauvegarde de CV sur notre site, ce qui a été très apprécié par le client.",
+              "Enfin, ma contribution de la partie front-end du site aura été l'implémentation d'un système d'arbre d'énigmes qui permet aux utilisateurs de naviguer entre les différentes énigmes du site de manière fluide et intuitive.<br /><br />Pour ce faire j'ai utilisé les Canva avec Vue.js 3 et j'ai fais en sorte que les énigmes soient générées à partir des données reçu en base de données. Ainsi, non seulement l'arbre se génère de manière fluide avec un style intuitif mais en plus le procédé fait qu'il est impossible pour les joueurs de tricher étant donné que les vérifications se font côté serveur."
+            ][index]
+            }`}></p>
+        </div>
+      </div>
+    ))}
+  </section>
+
+  <section class="project-final modern-box">
+    <h2>Résumé du Projet</h2>
+    <div class="summary-content">
+      <div class="summary">
+        <h3>Résumé :</h3>
+        <p>Ce projet aura été un défi de taille principalement pour réussir à rendre des énigmes cryptographique intuitive et ludique, ce qu'on a essayé de réalisé à travers un arbre de "compétence" similaire à ce qu'on peut retrouver dans les jeux-vidéos.</p>
+      </div>
+      <div class="keywords">
+        <h3>Mots Clés :</h3>
+        <p>Sécurisation, Efficacité, Expérience Utilisateur, Intuitif, Ludique</p>
+      </div>
+      <div class="personal-review">
+        <h3>Avis Personnel :</h3>
+        <p>Personnellement, Je n'avais jamais utilisés Django avant ce projet et mon ressenti avec la technologie a été satisfaisante, cette dernière est rapide à prendre en main et est particulièrement efficace et modulaire.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="project-resources">
+    <h2>Ressources du Projet</h2>
+    <div class="resources-buttons">
+      <a href="https://github.com/NeekzenTutorials/Kameleon-Back" target="_blank" rel="noopener" class="resource-button">GitHub du back</a>
+      <a href="https://kameleon.jrcan.dev" class="resource-button">Lien du site</a>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .project-header {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url('../../assets/kameleon_background.png') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+  }
+
+  .background-overlay {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 70%;
+  }
+
+  .tags {
+    margin-top: 1rem;
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+  }
+
+  .tag {
+    padding: 0.5rem 1rem;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    background: #007BFF;
+    color: white;
+  }
+
+  .modern-button {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #0e7916;
+    color: white;
+    border-radius: 0;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+  }
+
+  .modern-button:hover {
+    background-color: #1bad28;
+  }
+
+  .back-button {
+    position: fixed;
+    top: 80px;
+    left: 20px;
+    padding: 0.5rem 1rem;
+    background: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .project-content {
+    max-width: 1000px;
+    margin: 4rem auto;
+    padding: 0 1rem;
+  }
+
+  .content-block {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 4rem;
+  }
+
+  .content-block.image-left {
+    flex-direction: row-reverse;
+  }
+
+  .text-box {
+    color: white;
+    background: #252525;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    flex: 1;
+  }
+
+  .content-block img {
+    width: 50%;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .project-final.modern-box {
+    background: #f8f8f8;
+    padding: 3rem 2rem;
+    text-align: center;
+    border-radius: 10px;
+    margin: 0 auto;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .summary-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .summary-content h3 {
+    margin-bottom: 0.5rem;
+  }
+
+  .project-resources {
+    background: #f8f8f8;
+    padding: 2rem;
+    text-align: center;
+    border-radius: 10px;
+    max-width: 800px;
+    margin: 2rem auto;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .resources-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .resource-button {
+    padding: 0.75rem 1.5rem;
+    background-color: #007BFF;
+    color: white;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+  }
+
+  .resource-button:hover {
+    background-color: #0056b3;
+  }
+
+  @media (max-width: 768px) {
+    .content-block {
+      flex-direction: column;
+    }
+    .content-block.image-left {
+      flex-direction: column;
+    }
+    .content-block img {
+      width: 100%;
+    }
+  }
+</style>
